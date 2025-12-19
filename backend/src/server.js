@@ -5,6 +5,10 @@ import { connectDB } from "./db.js";
 import keysRouter from "./routes/keys.js";
 import recordsRouter from "./routes/records.js";
 
+import shareRouter from "./routes/share.js";
+
+
+
 dotenv.config();
 
 const app = express();
@@ -19,6 +23,7 @@ app.get("/health", (_req, res) => res.json({ ok: true }));
 
 app.use("/api/keys", keysRouter);
 app.use("/api/records", recordsRouter);
+app.use("/api/share", shareRouter);
 
 const port = process.env.PORT || 5000;
 

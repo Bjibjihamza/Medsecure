@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: medsecure-mongo
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    volumes:
+      - medsecure_mongo_data:/data/db
+
+volumes:
+  medsecure_mongo_data:

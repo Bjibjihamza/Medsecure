@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Card } from "../components/UI"; // Import from step 1
+import { Card } from "../components/UI"; 
 
 export default function Home() {
   return (

@@ -15,6 +15,17 @@ export function downloadKey(id) {
   window.open(`${API_BASE}/api/keys/${id}/download`, "_blank");
 }
 
+
+export async function sendSecure(recordId, recipientUidOrEmail, recipientEmail) {
+  const r = await fetch(`${API_BASE}/api/share`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ recordId, recipientUidOrEmail, recipientEmail }),
+  });
+  return r.json();
+}
+
+
 export async function uploadRecord(formData) {
   const r = await fetch(`${API_BASE}/api/records`, { method: "POST", body: formData });
   return r.json();
